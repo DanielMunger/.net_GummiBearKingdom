@@ -1,5 +1,24 @@
-﻿@{
+﻿@model GummiBearKingdom.Models.Product
+@{
     ViewData["Title"] = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>Hello From Products</h1>
+<h1>Edit "@Model.Name"</h1>
+<hr />
+<form method="post" asp-action="Edit" asp-controller="Products" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="@Model.ProductId" placeholder="@Model.ProductId" />
+    <br />
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="@Model.Name" placeholder="@Model.Name" />
+    <br />
+    <label for="cost">Cost:</label>
+    <input type="number" name="cost" value="@Model.Cost" placeholder="@Model.Cost" />
+    <br />
+    <label for="country">Country of Origin:</label>
+    <input type="text" name="country" value="@Model.Country" placeholder="@Model.Country" />
+    <br />
+    <label for="picture">Picture:</label>
+    <input type="file" name="picture" required />
+    <br />
+    <input class="btn" type="submit" value="Edit Entry" />
+</form>

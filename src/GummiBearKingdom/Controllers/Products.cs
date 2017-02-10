@@ -21,13 +21,9 @@ namespace GummiBearKingdom.Controllers
         }
         public IActionResult Details(int id)
         {
-            return View();
+            return View(db.Products.FirstOrDefault(products => products.ProductId == id));
         }
-        [HttpPost] 
-        public IActionResult Details()
-        {
-            return RedirectToAction("Index");
-        }
+       
         public IActionResult Create()
         {
             return View();
@@ -50,9 +46,44 @@ namespace GummiBearKingdom.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            return View(db.Products.FirstOrDefault(product => product.ProductId == id));
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, string name, int cost, string country, IFormFile picture)
+        {
+            var productFromDb = db.Products.FirstOrDefault(Product => Product.ProductId == id);
+            byte[] pictureArray = new byte[0];
+            if (picture.Length > 0)
+            {
+                using (var fileStream = picture.OpenReadStream())
+                using (var ms = new MemoryStream())
+                {
+                    fileStream.CopyTo(ms);
+                    pictureArray = ms.ToArray();
+                }
+            }
+
+            if (productFromDb !=null)
+            {
+                productFromDb.Name = name;
+                productFromDb.Cost = cost;
+                productFromDb.Country = country;
+                productFromDb.Picture = pictureArray;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            return View(db.Products.FirstOrDefault(product => product.ProductId == id));
+        }
+        [HttpPost]
+        public IActionResult Delete()
+        {
+            return RedirectToAction("Index");
         }
     }
 }

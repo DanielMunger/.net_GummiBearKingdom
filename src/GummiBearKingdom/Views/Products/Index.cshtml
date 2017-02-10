@@ -1,24 +1,42 @@
-﻿@{
+﻿@model List<GummiBearKingdom.Models.Product>
+@{
     ViewData["Title"] = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    string Image = "";
+    foreach(var product in Model)
+    {
+        if(product.Picture != null)
+        {
+            var base64 = Convert.ToBase64String(product.Picture);
+            Image = String.Format("data:image/gif;base64,{0}", base64);
+        }
+
+    }
 }
-@model List<GummiBearKingdom.Models.Product>
 <h1>Products Carried by Gummi Bear Kingdom</h1>
 <div class="row">
-    <div class="col md3">Test Space</div>
-    <div class="col" md9>
-        @foreach(var product in Model)
-        {
-            <a href="/Products/Details/@product.ProductId">
-                <div class="card">
+    <div class="col md3 gummiborder"></div>
+   
+    @foreach (var product in Model)
+    {
+      
+        <div class="col s12 m7">
+            <h2 class="header">@product.Name</h2>
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="@Image">
+                </div>
+                <div class="card-stacked">
                     <div class="card-content">
-                        <h4>
-                            @product.Name
-                        </h4>
+                        <h4>Price: $@product.Cost.</h4>
+                        <h4>Country of Origin: @product.Country</h4>
+                    </div>
+                    <div class="card-action">
+                        <a href="/Products/Details/@product.ProductId">Product Details</a>
                     </div>
                 </div>
-            </a>
-
-        }
-    </div>
+            </div>
+        </div>
+    }
 </div>
+<button class="btn blue"><a href="/Products/Create" style="color:chartreuse">Create a new Product</a></button>

@@ -1,0 +1,15 @@
+﻿@model GummiBearKingdom.Models.Product
+@{
+    ViewData["Title"] = "Product: Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string Image = "";
+    if (Model.Picture != null)
+    {
+        var base64 = Convert.ToBase64String(Model.Picture);
+        Image = String.Format("data:image/gif;base64,{0}", base64);
+    }
+}
+<h1>Delete Product</h1>
+<h3>Are you sure you want to Delete @Model.Name?</h3>
+<button class="btn btn-warning">Yes, Delete this product</button>
+<button class="btn info">No, I like it too much</button>
