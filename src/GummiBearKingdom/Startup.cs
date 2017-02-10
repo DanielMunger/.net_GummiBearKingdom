@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-
+using GummiBearKingdom.Models;
 
 namespace GummiBearKingdom
 {
@@ -29,7 +29,7 @@ namespace GummiBearKingdom
             services.AddMvc();
             services.AddEntityFramework()
                 .AddDbContext<GummiBearKingdomContext>(options =>
-                options.UseSqlServer(Configuration["ConnectionString:DefaultConnection"]));
+                options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
