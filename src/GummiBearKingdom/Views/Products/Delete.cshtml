@@ -13,7 +13,7 @@
 <h3>Are you sure you want to Delete @Model.Name?</h3>
 @using (Html.BeginForm())
 {
-    <input style="color: darkred" class="btn" type="submit" value="Yes, Delete this Product" />
+    <input style="color: darkred" class="btn purple" type="submit" value="Yes, Delete this Product" />
 }
 <br />
-<button class="btn info"><a style="color: chartreuse" href="/Products/Details/@Model.ProductId">No, I like it too much</a></button>
+<a class="btn purple" style="color: chartreuse" href="/Products/Details/@Model.ProductId">No, I like it too much</a>

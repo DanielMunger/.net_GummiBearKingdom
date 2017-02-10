@@ -9,19 +9,19 @@
         <h3>Add a new Product to the Line</h3>
        <form method="post" asp-action="Create" asp-controller="Products" enctype="multipart/form-data">
            <label for="name">Product Name</label>
-           <input type="text" id="name" name="name" />
+           <input type="text" id="name" required name="name" />
            <br />
            <label for="cost">Product Cost</label>
-           <input type="number" id="cost" name="cost" />
+           <input type="number" id="cost" required name="cost" />
            <br />
            <label for="country">Product Origin</label>
-           <input type="text" id="country" name="country" />
+           <input type="text" id="country" required name="country" />
            <br />
            <label for="picture">Product Image</label>
            <br />
-           <input type="file" id="picture" name="picture" />
+           <input type="file" id="picture" required name="picture" />
            <br />
-           <input class="btn blue" type="submit" value="Add Product"/>
+           <input class="btn purple" type="submit" value="Add Product"/>
            <br />
        </form>
     </div>
