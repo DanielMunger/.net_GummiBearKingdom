@@ -11,5 +11,9 @@
 }
 <h1>Delete Product</h1>
 <h3>Are you sure you want to Delete @Model.Name?</h3>
-<button class="btn btn-warning">Yes, Delete this product</button>
-<button class="btn info">No, I like it too much</button>
+@using (Html.BeginForm())
+{
+    <input style="color: darkred" class="btn" type="submit" value="Yes, Delete this Product" />
+}
+<br />
+<button class="btn info"><a style="color: chartreuse" href="/Products/Details/@Model.ProductId">No, I like it too much</a></button>

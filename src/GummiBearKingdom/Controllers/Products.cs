@@ -80,10 +80,14 @@ namespace GummiBearKingdom.Controllers
         {
             return View(db.Products.FirstOrDefault(product => product.ProductId == id));
         }
-        [HttpPost]
-        public IActionResult Delete()
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
         {
+            var selectedProduct = db.Products.FirstOrDefault(products => products.ProductId == id);
+            db.Products.Remove(selectedProduct);
+            db.SaveChanges();
             return RedirectToAction("Index");
+            
         }
     }
 }
