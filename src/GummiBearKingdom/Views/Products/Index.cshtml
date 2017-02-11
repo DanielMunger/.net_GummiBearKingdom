@@ -17,11 +17,44 @@
 <hr />
 <div class="row">
     <div class="col md3 gummiborder"></div>
-   
+    <div class="col s12 m7" style="color:black">
+        <h2 class="header">Placeholder Name</h2>
+        <div class="card horizontal">
+            <div class="card-image">
+                <img src="https://verbalsnapshots.files.wordpress.com/2008/10/gummi-blue.jpg">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <h4>Price: $Placeholder Cost</h4>
+                    <h4>Country of Origin: Placeholder Country</h4>
+                </div>
+                <div class="card-action">
+                    <a href="">Product Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m7" style="color:black">
+        <h2 class="header">Placeholder Name</h2>
+        <div class="card horizontal">
+            <div class="card-image">
+                <img src="https://verbalsnapshots.files.wordpress.com/2008/10/gummi-blue.jpg">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <h4>Price: $Placeholder Cost</h4>
+                    <h4>Country of Origin: Placeholder Country</h4>
+                </div>
+                <div class="card-action">
+                    <a href="">Product Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
     @foreach (var product in Model)
     {
       
-        <div class="col s12 m7">
+        <div class="col s12 m7" style="color:black">
             <h2 class="header">@product.Name</h2>
             <div class="card horizontal">
                 <div class="card-image">
@@ -29,7 +62,7 @@
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
-                        <h4>Price: $@product.Cost.</h4>
+                        <h4>Price: $@product.Cost</h4>
                         <h4>Country of Origin: @product.Country</h4>
                     </div>
                     <div class="card-action">
