@@ -6,7 +6,7 @@
 
 ## Description
 
-_{This app is an example of a simple .net web app. It implements basic CRUD functionality with local database communication.}_
+_{This app is an example of a simple .net web app. It implements basic CRUD functionality with local database communication. The style was inspired by this website: http://www.candywarehouse.com/candy-type/gummy-and-jelly-candy/gummi-bears/}_
 
 
 ## Setup/Installation Requirements
