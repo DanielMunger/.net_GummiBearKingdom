@@ -12,7 +12,7 @@ using System.IO;
 
 namespace GummiBearKingdom.Controllers
 {
-    public class Products : Controller
+    public class ProductsController : Controller
     {
         private GummiBearKingdomContext db = new GummiBearKingdomContext();
         public IActionResult Index()

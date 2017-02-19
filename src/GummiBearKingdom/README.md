@@ -19,7 +19,6 @@ _{This app is an example of a simple .net web app. It implements basic CRUD func
   * _Replace 'DESKTOP-GC3DC7B\\SQLEXPRESS' with local server name in GummiBearKingdomContext.cs as well as appsettings.json file._
   * _Navigate to /src/GummiBearKingdom
   * _Open local server management tool and connect to server.
-  * _In terminal, type 'dotnet ef migration add Inital'
   * _Then type, 'dotnet ef database update'
   * _Verify database creation.
   * _In Visual Studio launch Server. In Atom...??????
